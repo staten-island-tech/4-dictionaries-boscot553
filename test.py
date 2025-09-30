@@ -31,31 +31,59 @@
 
 cart = list
 cart = []
-cost = float(0)
+cost = int(0)
 items =[ {
     "name": "Television",
     "cost": "$ 74.00",
-    "model": "Samsung S95F"},
+    "Company": "Samsung"},
     {
     "name": "Iphone",
     "cost": "$ 40.00",
-    "model": "Falcon Supernova iPhone 6"},
+    "model": "Apple"},
     {
     "name": "Car",
     "cost": "$ 30.00",
-    "model": "Rolls-Royce La Rose Noire Droptail"},
+    "model": "Stellantis"},
+    {
+    "name": "Water",
+    "cost": "$ 1250.00",
+    "Company": "Fernando Altamirano Luxury Brands",
+    
+    }
 ]
+
+
+
 
 shop = input("Welcome, what would you like to buy? Type options to view options. Type done to check out.  ")
 shop = str(shop)
-if shop == "options":
-    print(items)
-elif shop == str("Television"):
-    cart.append("Television")
-    cost += 74.00
-elif shop == str("Iphone"):
-    cart.append("Iphone")
-elif shop == str("Car"):
-    cart.append("Car")
-elif shop == str("done"):
-    print(cart)
+while shop is not "done":
+    if shop == "options":
+        print(items)
+        shop = input("What do you wanna buy? Type done to check out ")
+    elif shop == str("Television"):
+        cart.append("Television")
+        cost += float("74.00")
+        print("Television added to cart")
+        shop = input("What do you wanna buy? Type done to check out ")
+    elif shop == str("Iphone"):
+        cart.append("Iphone")
+        cost += float("40.00")
+        print("Iphone added to cart")
+        shop = input("What do you wanna buy? Type done to check out ")
+    elif shop == str("Car"):
+        cart.append("Car")
+        cost += float("30.00")
+        print("Car added to cart")
+        shop = input("What do you wanna buy? Type done to check out ")
+    elif shop == str("Water"):
+        cart.append("Water")
+        cost += float("1250.00")
+        print("Water added to cart")
+        shop = input("What do you wanna buy? Type done to check out ")
+    elif shop == str("done"):
+        print(cart)
+        print(cost)
+        break
+
+print("Thanks for your pruchase! Come back next time!!!")
